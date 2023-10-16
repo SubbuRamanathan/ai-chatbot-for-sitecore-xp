@@ -1,0 +1,47 @@
+﻿---
+ID: "4d1f06e8-153c-4040-a60e-70a6282e4326"
+Parent: "0342a41f-6034-4f94-bbfd-83660b10150b"
+Template: "8d423a10-e57c-4892-877f-e39cc2865ef1"
+Path: /sitecore/system/Modules/PowerShell/Script Library/AI Chatbot/Cognitive Search Settings
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 200
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20231014T222200Z
+    - ID: "37dacd4e-9621-456f-829b-cac011e507d9"
+      Hint: APIKey
+      Value: ""
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\superuser
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\superuser
+    - ID: "70c53c0d-4986-4e93-ad75-8d1f541b2932"
+      Hint: IndexName
+      Value: ""
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "5b406396-de81-4249-ab7a-6681fae03d33"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\superuser
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20231015T181935Z
+    - ID: "ddaad956-9612-425a-9c20-c7a7889ed177"
+      Hint: SearchResourceName
+      Value: ""
+    - ID: "f29b3124-732c-4ee0-82cc-b85eb34e8afc"
+      Hint: APIVersion
+      Value: ""

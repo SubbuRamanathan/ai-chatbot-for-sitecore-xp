@@ -1,0 +1,43 @@
+﻿---
+ID: "cb7cc553-8572-4d05-a6f3-853d39acd3dd"
+Parent: "0342a41f-6034-4f94-bbfd-83660b10150b"
+Template: "4ed7e798-ba17-40a9-922a-7e314854537f"
+Path: /sitecore/system/Modules/PowerShell/Script Library/AI Chatbot/Azure OpenAI Settings
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0c1fc687-3168-43da-a1bb-66f9534ea810"
+      Hint: OpenAIResourceName
+      Value: ""
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20231014T222239Z
+    - ID: "297efbc1-4246-40c1-b7f4-fbf909ed294f"
+      Hint: APIKey
+      Value: ""
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\superuser
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\superuser
+    - ID: "65d1dede-7670-436b-9c98-5103ff83fd55"
+      Hint: EmbeddingModelDeploymentName
+      Value: ""
+    - ID: "8b1519de-2b5d-46fe-af14-1b1deb861b86"
+      Hint: APIVersion
+      Value: ""
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "ad714ff0-0fc7-492a-a79b-3363272ba94b"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\superuser
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20231015T181816Z
