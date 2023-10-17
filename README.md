@@ -8,7 +8,7 @@ This repository contains the Sitecore Powershell Module needed for connecting XP
 ## Setup & Configuration
 * Create Azure OpenAI Service from Azure Portal
 * Launch [Azure AI Studio](https://oai.azure.com/)
-* Create a new deployment selecting your preferred model(typically gpt-35-turbo-16k)
+* Create a new deployment selecting your preferred model(typically gpt-35-turbo-16k or gpt-4-32k)
 * Create a new deployment for embeddings by selecting the model as text-embedding-ada-002, which will be used later for generating embeddings
 * Navigate to Chat, and select 'Add a data source'
 * Choose Azure Blob Storage(if you will need to index files as well) or Azure Cognitive Search(if it will be only content) as data source
