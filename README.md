@@ -8,11 +8,11 @@ This repository contains the Sitecore Powershell Module needed for connecting XP
 ## Setup & Configuration
 * Create Azure OpenAI Service from Azure Portal
 * Launch [Azure AI Studio](https://oai.azure.com/)
-* Create a new deployment selecting your preferred model(typically gpt-35-turbo-16k or gpt-4-32k)
+* Create a new deployment selecting your preferred model(typically gpt-35-turbo-16k or gpt-4-32k). More details about models can be found [here](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models).
 * Create a new deployment for embeddings by selecting the model as text-embedding-ada-002, which will be used later for generating embeddings
 * Navigate to Chat, and select 'Add a data source'
 * Choose Azure Blob Storage(if you will need to index files as well) or Azure Cognitive Search(if it will be only content) as data source
-* Create the necessary elements prompted by the tool like Azure Blob Storage, Azure Cognitive Search, Search Index, etc., and complete the setup
+* Create the necessary elements prompted by the tool like Azure Blob Storage, Azure Cognitive Search, Search Index, etc., and complete the setup. Ensure to review the created Azure Resources and configure them based on Azure Security Best Practices 
 * Customize and deploy this Sitecore Powershell Module in your Sitecore instance by following the steps described in the next section
 * Publish all content items that are necessary for the Chatbot to populate the Azure Cognitive Search Index
 * Validate the chat experience within the Azure AI Studio
