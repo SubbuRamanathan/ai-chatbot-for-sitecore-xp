@@ -23,7 +23,15 @@ This repository contains the Sitecore Powershell Module needed for connecting XP
 * Clone this Github repository
 * Migrate the config & serialized items into your repository
 * Sync the items with Sitecore
-* Populate the Azure OpenAI and Cognitive Search settings
-* Add appropriate Enable rules in the below script item to limit indexing only for specific intended items required by Chatbot, 
+* Populate the Azure OpenAI and Cognitive Search settings under _/sitecore/system/Modules/PowerShell/Script Library/AI Chatbot_
+* Add appropriate Enable rules in the below script item to limit indexing only for specific intended items required by Chatbot, _/sitecore/system/Modules/PowerShell/Script Library/AI Chatbot/Event Handlers/Publish/End/Index Content in Cognitive Search_
 * Update the script to include content from all fields that are needed for the Chatbot
 * Validate and promote your changes to production!
+
+## Considerations/Limitations:
+* Azure OpenAI is available in multiple regions. However, certain models/features are available only in specific locations. Choose the closest location which has the model/features that you are looking for. Review the [Azure OpenAI Models Guide](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models) for more information/status.
+* The maximum length of input text for embedding models is 2048 tokens (equivalent to around 2-3 pages of text)
+* Consider fine-tuning the responses to match your brand guidelines
+* Consider supplying more context about the person, his/her interests, historical information, etc., to OpenAI from your orchestrating application for a personalized chat experience
+* Implement Azure Security Best Practices for OpenAI like using Private Endpoints, using Azure AD Identity, etc.
+* Apply Content Filters and consider using Azure AI Content Safety Studio for filtering harmful content if needed
