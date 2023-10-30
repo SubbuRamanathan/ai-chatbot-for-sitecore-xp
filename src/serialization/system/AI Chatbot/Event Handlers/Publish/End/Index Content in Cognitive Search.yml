@@ -4,17 +4,24 @@ Parent: "3d0e62bb-077e-4e18-9b70-fd7ec8bff0a2"
 Template: "dd22f1b3-bd87-4db2-9e7d-f7a496888d43"
 Path: /sitecore/system/Modules/PowerShell/Script Library/AI Chatbot/Event Handlers/Publish/End/Index Content in Cognitive Search
 SharedFields:
+- ID: "1c76313e-3c8c-4807-a826-135d10c39299"
+  Hint: ShowRule
+  Value: 
 - ID: "b1a94ff0-6897-47c0-9c51-aa6acb80b1f0"
   Hint: Script
   Value: |
     Import-Function Index-PublishedContent
+    Import-Function Process-PublishedContent
     
     $contentField = "Content"
     $publisher = $eventArgs.Parameters[0]
     $publishedItem = $publisher.Options.RootItem
-    $content = $publishedItem.Fields[$contentField]
+    $content = Process-PublishedContent $publishedItem.Fields[$contentField]
     
     Index-PublishedContent $publishedItem $content
+- ID: "f62c67b4-28b6-4a6f-91cb-db78cf054f4e"
+  Hint: EnableRule
+  Value: 
 Languages:
 - Language: en
   Versions:
@@ -33,11 +40,11 @@ Languages:
         sitecore\superuser
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "330c8c2f-ccad-4abb-a738-d8178fad8273"
+      Value: "1191e401-efc9-4b5d-afb9-880eb3ceb1b9"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\superuser
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20231016T004441Z
+      Value: 20231030T002456Z

@@ -24,7 +24,6 @@ This repository contains the Sitecore Powershell Module needed for connecting XP
 * Migrate the config & serialized items into your repository
 * Sync the items with Sitecore
 * Populate the Azure OpenAI and Cognitive Search settings under _/sitecore/system/Modules/PowerShell/Script Library/AI Chatbot_
-* Add appropriate Enable rules in the below script item to limit indexing only for specific intended items required by Chatbot, _/sitecore/system/Modules/PowerShell/Script Library/AI Chatbot/Event Handlers/Publish/End/Index Content in Cognitive Search_
 * Update the script to include content from all fields that are needed for the Chatbot
 * Validate and promote your changes to production!
 
