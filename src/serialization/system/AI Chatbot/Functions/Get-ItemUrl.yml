@@ -10,7 +10,7 @@ SharedFields:
     function Get-ItemUrl {
             [CmdletBinding()]
             param(
-                [item]$Item,
+                [Item]$Item,
                 [Sitecore.Sites.SiteContext]$SiteContext
             )
             
@@ -53,11 +53,11 @@ Languages:
         sitecore\superuser
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "e4f0ed15-cf88-4995-b8d2-53b4a6d354a9"
+      Value: "ab12b9d1-cba7-453b-b05e-289677c96ba2"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\superuser
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20231014T223404Z
+      Value: 20231101T190253Z

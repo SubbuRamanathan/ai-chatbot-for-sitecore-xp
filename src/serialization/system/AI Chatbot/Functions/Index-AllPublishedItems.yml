@@ -1,26 +1,29 @@
 ﻿---
-ID: "412fba7b-a172-4d5a-ad85-ae53794bcebc"
+ID: "7209e42d-c894-41bc-99ac-fd73bcb8bbff"
 Parent: "145ef5cf-3185-4163-8b4b-9cfaa35c98ed"
 Template: "dd22f1b3-bd87-4db2-9e7d-f7a496888d43"
-Path: "/sitecore/system/Modules/PowerShell/Script Library/AI Chatbot/Functions/Process-PublishedContent"
+Path: "/sitecore/system/Modules/PowerShell/Script Library/AI Chatbot/Functions/Index-AllPublishedItems"
 SharedFields:
 - ID: "b1a94ff0-6897-47c0-9c51-aa6acb80b1f0"
   Hint: Script
   Value: |
-    function Process-PublishedContent {
+    function Index-AllPublishedItems {
         [CmdletBinding()]
         param(
-            [string]$Content
+            [Item]$PublishedItem,
+            [bool]$IncludeSubItems
         )
+    
+        Import-Function Index-Content
         
-        $regexToMatchOpeningHtmlTags = '<[^(>/)]*>'
-        $regexToMatchClosingHtmlTags = '(\.)?</[^>]*>'
-        $sanitizedContent = $Content -replace $regexToMatchOpeningHtmlTags, ''  -replace $regexToMatchClosingHtmlTags, '.' -replace '\n', ' '
-        return $sanitizedContent
+        Index-Content $PublishedItem
+        if($IncludeSubItems) {
+            Get-ChildItem -Path "$($PublishedItem.Database.Name):\$($PublishedItem.Paths.FullPath)" -Recurse | ForEach-Object { Index-Content $_ }
+        }
     }
 - ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
-  Value: 200
+  Value: 100
 Languages:
 - Language: en
   Versions:
@@ -39,11 +42,11 @@ Languages:
         sitecore\superuser
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "25f80868-2e7f-461b-921e-864ec04c8433"
+      Value: "8c09e276-10f2-49da-8131-c37bed098ede"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\superuser
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20231029T235215Z
+      Value: 20231101T215053Z

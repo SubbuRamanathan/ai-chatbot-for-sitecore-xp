@@ -10,7 +10,7 @@ SharedFields:
     function Get-ContextItemSite {
             [CmdletBinding()]
             param(
-                [item]$Item
+                [Item]$Item
             )
             
             $associatedSiteContext = [Sitecore.Sites.SiteContextFactory]::Sites | Where-Object {$Item.Paths.FullPath.StartsWith($_.RootPath + $_.StartItem, "CurrentCultureIgnoreCase")}
@@ -42,11 +42,11 @@ Languages:
         sitecore\superuser
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "54664dbe-e993-4642-aa74-c39592a513d6"
+      Value: "4ed30ba1-ab1c-44b6-8726-a8a7d7e4e891"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\superuser
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20231014T223324Z
+      Value: 20231101T190258Z
