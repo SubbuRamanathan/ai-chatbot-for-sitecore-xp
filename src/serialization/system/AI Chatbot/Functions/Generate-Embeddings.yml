@@ -21,8 +21,9 @@ SharedFields:
         $body = @{
             'input'=$Content
         } | ConvertTo-Json
+        $encodedBody = [System.Text.Encoding]::UTF8.GetBytes($body)
         try{
-            $result = Invoke-RestMethod -Method post -ContentType 'application/json' -Headers $headers -Body $body -Uri $embeddingApiUrl
+            $result = Invoke-RestMethod -Method post -ContentType 'application/json' -Headers $headers -Body $encodedBody -Uri $embeddingApiUrl
         }
         catch{
             Write-Log $_ -Verbose
@@ -50,11 +51,11 @@ Languages:
         sitecore\superuser
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "a730e8a3-9819-40ae-a1d3-6b2f1753c977"
+      Value: "dd86a916-6001-45fb-817c-4753441cb35a"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\superuser
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20231016T004835Z
+      Value: 20231101T204800Z
