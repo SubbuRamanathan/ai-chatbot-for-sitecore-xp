@@ -14,7 +14,8 @@ This repository contains the Sitecore Powershell Module needed for connecting XP
 * Choose Azure Blob Storage(if you will need to index files as well) or Azure Cognitive Search(if it will be only content) as data source
 * Create the necessary elements prompted by the tool like Azure Blob Storage, Azure Cognitive Search, Search Index, etc., and complete the setup. Ensure to review the created Azure Resources and configure them based on Azure Security Best Practices 
 * Customize and deploy this Sitecore Powershell Module in your Sitecore instance by following the steps described in the next section
-* Publish all content items that are necessary for the Chatbot to populate the Azure Cognitive Search Index
+* Implement Security Best Practices like using Private Endpoints, migrating from Key-based authentication to [Role-based Access Control](https://techcommunity.microsoft.com/t5/azure-ai-services-blog/eliminate-dependency-on-key-based-authentication-in-azure/ba-p/3821880), etc.
+* Publish all content items necessary for the Chatbot to populate the Azure Cognitive Search Index. You could publish the respective individual item or the parent item along with subitems for indexing.
 * Validate the chat experience within the Azure AI Studio
 * Deploy the chat experience as a new Web App or Power Virtual Agent bot from the Chat section
 * Embed the chat experience within your website
@@ -23,7 +24,7 @@ This repository contains the Sitecore Powershell Module needed for connecting XP
 * Clone this Github repository
 * Migrate the config & serialized items into your repository
 * Sync the items with Sitecore
-* Populate the Azure OpenAI and Cognitive Search settings under _/sitecore/system/Modules/PowerShell/Script Library/AI Chatbot_
+* Populate the General Settings(Templates & Fields to be included), Azure OpenAI and Cognitive Search Settings under _/sitecore/system/Modules/PowerShell/Script Library/AI Chatbot_. For production deployments, you may need to optimize the _Index-Content_ & _Generate-Embeddings_ functions to retrieve the API Keys or Client ID/Secret from Azure Key Vault or any existing solution that you may be following for storing/handling secrets.
 * Update the script to include content from all fields that are needed for the Chatbot
 * Validate and promote your changes to production!
 
@@ -32,5 +33,6 @@ This repository contains the Sitecore Powershell Module needed for connecting XP
 * The maximum length of input text for embedding models is 2048 tokens (equivalent to around 2-3 pages of text)
 * Consider fine-tuning the responses to match your brand guidelines
 * Consider supplying more context about the person, his/her interests, historical information, etc., to OpenAI from your orchestrating application for a personalized chat experience
-* Implement Azure Security Best Practices for OpenAI like using Private Endpoints, using Azure AD Identity, etc.
+* Set up log monitoring and alerting to track any indexing failures and address issues proactively. This module logs the failures within SPE.log files.
+* You may need to customize the solution, including module, chat web app, etc., for supporting multiple languages, multiple publishing targets, etc.
 * Apply Content Filters and consider using Azure AI Content Safety Studio for filtering harmful content if needed
