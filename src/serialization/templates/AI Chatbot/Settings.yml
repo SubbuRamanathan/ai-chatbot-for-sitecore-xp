@@ -1,15 +1,18 @@
 ﻿---
-ID: "8d423a10-e57c-4892-877f-e39cc2865ef1"
+ID: "9fe390f5-71e9-496a-bf44-38e55b247266"
 Parent: "1491fa53-dc2a-4716-95d9-d729b3028685"
 Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
-Path: /sitecore/templates/Modules/AI Chatbot/Cognitive Search Settings
+Path: /sitecore/templates/Modules/AI Chatbot/Settings
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
   Hint: __Icon
-  Value: Office/32x32/server.png
+  Value: office/32x32/gearwheels.png
 - ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
   Hint: __Base template
   Value: "{1930BBEB-7805-471A-A3BE-4858AC7CF696}"
+- ID: "f7d48a55-2158-4f02-9356-756654404f73"
+  Hint: __Standard values
+  Value: "{8C25819B-3FA6-4850-9662-B21485421DE7}"
 Languages:
 - Language: en
   Versions:
@@ -17,7 +20,7 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20231014T220141Z
+      Value: 20231101T153326Z
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -28,11 +31,11 @@ Languages:
         sitecore\superuser
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "8660f86b-16b0-47c2-bfe6-204fa0798698"
+      Value: "0480471f-202c-45c6-9a7b-3c2ebc3eea39"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\superuser
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20231014T221216Z
+      Value: 20231105T180532Z

@@ -1,27 +1,30 @@
 ﻿---
-ID: "65d1dede-7670-436b-9c98-5103ff83fd55"
-Parent: "d7062342-fccb-40e6-b561-6b3d55ef5304"
+ID: "aa260042-8305-4334-bd8b-4f7adddbb79d"
+Parent: "4738f7f9-44b1-430c-9551-55a9b5ebb021"
 Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
-Path: /sitecore/templates/Modules/AI Chatbot/Azure OpenAI Settings/Settings/EmbeddingModelDeploymentName
+Path: /sitecore/templates/Modules/AI Chatbot/Settings/Settings/Templates
 SharedFields:
+- ID: "1eb8ae32-e190-44a6-968d-ed904c794ebf"
+  Hint: Source
+  Value: /sitecore/templates
 - ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
   Hint: Type
-  Value: "Single-Line Text"
+  Value: Treelist
 - ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
-  Value: 150
+  Value: 100
 Languages:
 - Language: en
   Fields:
   - ID: "19a69332-a23e-4e70-8d16-b2640cb24cc8"
     Hint: Title
-    Value: Embedding Model Deployment Name
+    Value: Select the Templates to include
   Versions:
   - Version: 1
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20231015T181554Z
+      Value: 20231101T153915Z
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -32,11 +35,11 @@ Languages:
         sitecore\superuser
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "79bb707c-2bd6-44de-aadb-7b8b2e73805d"
+      Value: "21e6eb2a-62e9-472a-872a-c49a43494c7f"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\superuser
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20231015T184939Z
+      Value: 20231101T220027Z
