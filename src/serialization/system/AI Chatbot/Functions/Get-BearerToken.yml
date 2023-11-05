@@ -1,38 +1,36 @@
 ﻿---
-ID: "2c311bbe-bd01-49c1-9739-79b52cd82e2c"
+ID: "26d96374-7257-4a65-904b-372a2cb6e4be"
 Parent: "145ef5cf-3185-4163-8b4b-9cfaa35c98ed"
 Template: "dd22f1b3-bd87-4db2-9e7d-f7a496888d43"
-Path: "/sitecore/system/Modules/PowerShell/Script Library/AI Chatbot/Functions/Generate-Embeddings"
+Path: "/sitecore/system/Modules/PowerShell/Script Library/AI Chatbot/Functions/Get-BearerToken"
 SharedFields:
 - ID: "b1a94ff0-6897-47c0-9c51-aa6acb80b1f0"
   Hint: Script
   Value: |
-    function Generate-Embeddings {
+    function Get-BearerToken {
         [CmdletBinding()]
         param(
-            [string]$Content
+            [string]$Resource
         )
         
-        Import-Function Get-BearerToken
         $settings = Get-Item -Path "master:" -ID "{466BDBB7-CC45-415C-A108-6807F68498EA}"
-        $embeddingApiUrl = "https://$($settings.OpenAIResourceName).openai.azure.com/openai/deployments/$($settings.EmbeddingModelDeploymentName)/embeddings?api-version=$($settings.OpenAIAPIVersion)"
-        $headers = @{
-            Authorization="Bearer $(Get-BearerToken -Resource 'https://cognitiveservices.azure.com')"
-        }
+        $tokenUrl = "https://login.microsoftonline.com/$($settings.TenantID)/oauth2/token"
         $body = @{
-            'input'=$Content
-        } | ConvertTo-Json
-        $encodedBody = [System.Text.Encoding]::UTF8.GetBytes($body)
+            'grant_type'='client_credentials'
+            'client_id' = $settings.ClientID
+            'client_secret' = $settings.ClientSecret
+            'resource' = $Resource
+        }
         try{
-            $result = Invoke-RestMethod -Method post -ContentType 'application/json' -Headers $headers -Body $encodedBody -Uri $embeddingApiUrl
+            $result = Invoke-RestMethod -Method post -ContentType 'application/x-www-form-urlencoded' -Body $body -Uri $tokenUrl
         }
         catch{
             Write-Log $_ -Verbose
-            Show-Alert -Title "Failed to generate embeddings. Please check logs for more details."
+            Show-Alert -Title "Failed to retrieve bearer token. Please check logs for more details."
             return
         }
         
-        return $result.data[0].embedding | ConvertTo-Json
+        return $result.access_token
     }
 Languages:
 - Language: en
@@ -52,11 +50,11 @@ Languages:
         sitecore\superuser
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "faaeed47-831c-4716-af98-acfe3d9bf2b7"
+      Value: "581b8d7a-9f58-4d14-a1c6-610aaa927b18"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\superuser
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20231105T185531Z
+      Value: 20231105T182550Z

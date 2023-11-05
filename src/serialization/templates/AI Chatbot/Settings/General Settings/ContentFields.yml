@@ -2,7 +2,7 @@
 ID: "2dfa9306-39d1-4dc3-ab9c-9a56c79f894b"
 Parent: "4738f7f9-44b1-430c-9551-55a9b5ebb021"
 Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
-Path: /sitecore/templates/Modules/AI Chatbot/Settings/Settings/ContentFields
+Path: /sitecore/templates/Modules/AI Chatbot/Settings/General Settings/ContentFields
 SharedFields:
 - ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
   Hint: Type

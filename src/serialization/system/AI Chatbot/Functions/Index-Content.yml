@@ -15,16 +15,17 @@ SharedFields:
         
         Import-Function Is-IndexableItem
         if(Is-IndexableItem $PublishedItem){
+            Import-Function Get-BearerToken
             Import-Function Generate-Embeddings
             Import-Function Get-ItemUrl
             Import-Function Get-Content
             
             $content = Get-Content $PublishedItem
                     
-            $cognitiveSearchSettings = Get-Item -Path "master:" -ID "{4D1F06E8-153C-4040-A60E-70A6282E4326}"
-            $searchApiUrl = "https://$($cognitiveSearchSettings.SearchResourceName).search.windows.net/indexes/$($cognitiveSearchSettings.IndexName)/docs/index?api-version=$($cognitiveSearchSettings.APIVersion)"
+            $settings = Get-Item -Path "master:" -ID "{466BDBB7-CC45-415C-A108-6807F68498EA}"
+            $searchApiUrl = "https://$($settings.SearchResourceName).search.windows.net/indexes/$($settings.IndexName)/docs/index?api-version=$($settings.CognitiveSearchAPIVersion)"
             $headers = @{
-                'api-key'=$cognitiveSearchSettings.APIKey
+                Authorization="Bearer $(Get-BearerToken -Resource 'https://search.azure.com')"
             }
             $documentId = $PublishedItem.ID.ToShortID()
             $body = @"
@@ -77,11 +78,11 @@ Languages:
         sitecore\superuser
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "588300b0-eaf1-4e4b-a1d9-06e421e55d78"
+      Value: "cec832d7-2ad8-48b6-ac99-f328553df32d"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\superuser
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20231101T212916Z
+      Value: 20231105T185855Z

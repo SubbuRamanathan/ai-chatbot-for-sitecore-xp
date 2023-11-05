@@ -28,6 +28,9 @@ Languages:
   - ID: "19a69332-a23e-4e70-8d16-b2640cb24cc8"
     Hint: Title
     Value: OpenAI Resource Name
+  - ID: "9541e67d-ce8c-4225-803d-33f7f29f09ef"
+    Hint: __Short description
+    Value: "Eg: sitecore-openai-demo"
   Versions:
   - Version: 1
     Fields:
@@ -44,11 +47,11 @@ Languages:
         sitecore\superuser
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "c1677647-41f5-4500-b1b7-2375b719ceaa"
+      Value: "fe2f80f6-b458-45f2-a156-d41dc30945f9"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\superuser
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20231105T183121Z
+      Value: 20231105T201817Z

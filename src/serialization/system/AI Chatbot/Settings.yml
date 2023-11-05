@@ -2,18 +2,31 @@
 ID: "466bdbb7-cc45-415c-a108-6807f68498ea"
 Parent: "0342a41f-6034-4f94-bbfd-83660b10150b"
 Template: "9fe390f5-71e9-496a-bf44-38e55b247266"
-Path: /sitecore/system/Modules/PowerShell/Script Library/AI Chatbot/General Settings
+Path: /sitecore/system/Modules/PowerShell/Script Library/AI Chatbot/Settings
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 300
 Languages:
 - Language: en
   Versions:
   - Version: 1
     Fields:
+    - ID: "070dcc3e-f691-48b2-a871-559982e1a924"
+      Hint: IndexName
+      Value: ""
+    - ID: "0c6b09a2-9128-4283-bf4d-1cd683f6a161"
+      Hint: SearchResourceName
+      Value: ""
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20231101T153928Z
     - ID: "2dfa9306-39d1-4dc3-ab9c-9a56c79f894b"
       Hint: ContentFields
       Value: 
+    - ID: "330ced9d-850c-44c0-bd6d-afe759055013"
+      Hint: ClientID
+      Value: ""
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -22,16 +35,28 @@ Languages:
       Hint: __Created by
       Value: |
         sitecore\superuser
+    - ID: "6e1796d1-0810-4125-a5e5-b2412c1f4782"
+      Hint: TenantID
+      Value: ""
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "bd51f75d-0121-4c86-a2dc-166ba50db246"
+      Value: "72938965-ca94-4652-acdc-2edffddc628e"
     - ID: "aa260042-8305-4334-bd8b-4f7adddbb79d"
       Hint: Templates
       Value: 
+    - ID: "ba77cf45-d824-4cfd-9274-2a8db9ed78ea"
+      Hint: EmbeddingModelDeploymentName
+      Value: ""
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\superuser
+    - ID: "c8fbd878-83bb-4772-a6b1-2f1e42bdb3b2"
+      Hint: ClientSecret
+      Value: 
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20231101T194954Z
+      Value: 20231105T201613Z
+    - ID: "f85c70ab-f16e-415b-8c3b-4671db78033a"
+      Hint: OpenAIResourceName
+      Value: ""

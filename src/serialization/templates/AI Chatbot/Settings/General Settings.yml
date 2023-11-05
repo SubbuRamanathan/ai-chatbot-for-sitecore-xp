@@ -2,7 +2,7 @@
 ID: "4738f7f9-44b1-430c-9551-55a9b5ebb021"
 Parent: "9fe390f5-71e9-496a-bf44-38e55b247266"
 Template: "e269fbb5-3750-427a-9149-7aa950b49301"
-Path: /sitecore/templates/Modules/AI Chatbot/Settings/Settings
+Path: /sitecore/templates/Modules/AI Chatbot/Settings/General Settings
 Languages:
 - Language: en
   Versions:
