@@ -7,19 +7,11 @@ SharedFields:
 - ID: "b1a94ff0-6897-47c0-9c51-aa6acb80b1f0"
   Hint: Script
   Value: |
-    function Index-AllPublishedItems {
-        [CmdletBinding()]
-        param(
-            [Item]$PublishedItem,
-            [bool]$IncludeSubItems
-        )
+    Import-Function Index-Content
     
-        Import-Function Index-Content
-        
-        Index-Content $PublishedItem
-        if($IncludeSubItems) {
-            Get-ChildItem -Path "$($PublishedItem.Database.Name):\$($PublishedItem.Paths.FullPath)" -Recurse | ForEach-Object { Index-Content $_ }
-        }
+    Index-Content $PublishedItem
+    if($IncludeSubItems) {
+        Get-ChildItem -Path "$($PublishedItem.Database.Name):\$($PublishedItem.Paths.FullPath)" -Recurse | ForEach-Object { Index-Content $_ }
     }
 - ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
@@ -42,11 +34,11 @@ Languages:
         sitecore\superuser
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "8c09e276-10f2-49da-8131-c37bed098ede"
+      Value: "d748c31d-4da2-4b73-bf6f-1b8294470a2a"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\superuser
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20231101T215053Z
+      Value: 20231106T001039Z

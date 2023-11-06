@@ -10,12 +10,16 @@ SharedFields:
 - ID: "b1a94ff0-6897-47c0-9c51-aa6acb80b1f0"
   Hint: Script
   Value: |
-    Import-Function Index-AllPublishedItems
-    
     $publisher = $eventArgs.Parameters[0]
     $publishOptions = $publisher.Options
     
-    Index-AllPublishedItems $publishOptions.RootItem $publishOptions.Deep
+    $scriptPath = "master:\system\Modules\PowerShell\Script Library\AI Chatbot\Functions\Index-AllPublishedItems"
+    $args = @{
+        "PublishedItem" = $publishOptions.RootItem;
+        "IncludeSubItems" = $publishOptions.Deep
+    }
+    
+    Start-ScriptSession -Path $scriptPath -ArgumentList $args
 - ID: "f62c67b4-28b6-4a6f-91cb-db78cf054f4e"
   Hint: EnableRule
   Value: 
@@ -37,11 +41,11 @@ Languages:
         sitecore\superuser
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "1de2cc07-9d86-41c8-8160-738efcf2f5bf"
+      Value: "9581a1ea-31a3-4655-ae2b-cf7fa864c6c5"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\superuser
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20231101T212342Z
+      Value: 20231106T001056Z
