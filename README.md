@@ -12,26 +12,27 @@ This repository contains the Sitecore Powershell Module needed for connecting XP
 * Create a new deployment for embeddings by selecting the model as text-embedding-ada-002, which will be used later for generating embeddings
 * Navigate to Chat, and select 'Add a data source'
 * Choose Azure Blob Storage(if you will need to index files as well) or Azure Cognitive Search(if it will be only content) as data source
-* Create the necessary elements prompted by the tool like Azure Blob Storage, Azure Cognitive Search, Search Index, etc., and complete the setup. Ensure to review the created Azure Resources and configure them based on Azure Security Best Practices 
+* Create the necessary elements prompted by the tool like Azure Blob Storage, Azure Cognitive Search, Search Index, etc., and complete the setup. Ensure to review the created Azure Resources and configure them based on Azure Security Best Practices
+* Register an app in Azure Active Directory(now Entra ID) and obtain Tenant ID, Client ID & Client Secret, as you will need them in the upcoming steps
+* Add appropriate role assignments to the app for Azure OpenAI(Cognitive Services OpenAI Contributor) and Cognitive Search(Search Service Contributor/Search Index Data Contributor) resources from their respective IAM sections.
 * Customize and deploy this Sitecore Powershell Module in your Sitecore instance by following the steps described in the next section
-* Implement Security Best Practices like using Private Endpoints, migrating from Key-based authentication to [Role-based Access Control](https://techcommunity.microsoft.com/t5/azure-ai-services-blog/eliminate-dependency-on-key-based-authentication-in-azure/ba-p/3821880), etc.
+* Implement Security Best Practices like Private Endpoints, Role-based Access Control, etc.
 * Publish all content items necessary for the Chatbot to populate the Azure Cognitive Search Index. You could publish the respective individual item or the parent item along with subitems for indexing.
 * Validate the chat experience within the Azure AI Studio
 * Deploy the chat experience as a new Web App or Power Virtual Agent bot from the Chat section
 * Embed the chat experience within your website
 
-## To extend or customize this module for project-specific needs:
+## To deploy, extend, or customize this module for project-specific needs:
 * Clone this Github repository
 * Migrate the config & serialized items into your repository
 * Sync the items with Sitecore
-* Populate the General Settings(Templates & Fields to be included), Azure OpenAI and Cognitive Search Settings under _/sitecore/system/Modules/PowerShell/Script Library/AI Chatbot_. For production deployments, you may need to optimize the _Index-Content_ & _Generate-Embeddings_ functions to retrieve the API Keys or Client ID/Secret from Azure Key Vault or any existing solution that you may be following for storing/handling secrets.
-* Update the script to include content from all fields that are needed for the Chatbot
+* Populate the General Settings(Templates & Fields to be included), Azure OAuth, OpenAI, and Cognitive Search Settings in _/sitecore/system/Modules/PowerShell/Script Library/AI Chatbot/Settings_. For production deployments, you may need to optimize the _Index-Content_ & _Generate-Embeddings_ functions to retrieve the secrets from Azure Key Vault and/or any existing solution you may be following for storing/handling secrets.
 * Validate and promote your changes to production!
 
 ## Considerations/Limitations:
 * Azure OpenAI is available in multiple regions. However, certain models/features are available only in specific locations. Choose the closest location which has the model/features that you are looking for. Review the [Azure OpenAI Models Guide](https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/models) for more information/status.
 * The maximum length of input text for embedding models is 2048 tokens (equivalent to around 2-3 pages of text)
-* Consider fine-tuning the responses to match your brand guidelines
+* Consider fine-tuning the model to match your brand guidelines if needed. Please note that fine-tuning is expensive; you may review the [OpenAI pricing page](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/openai-service/) for more details. In most cases, you may also be able to achieve your goals via Prompt Engineering.
 * Consider supplying more context about the person, his/her interests, historical information, etc., to OpenAI from your orchestrating application for a personalized chat experience
 * Set up log monitoring and alerting to track any indexing failures and address issues proactively. This module logs the failures within SPE.log files.
 * You may need to customize the solution, including module, chat web app, etc., for supporting multiple languages, multiple publishing targets, etc.
