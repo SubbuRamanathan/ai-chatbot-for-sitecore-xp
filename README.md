@@ -20,7 +20,7 @@ This repository contains the Sitecore Powershell Module needed for connecting XP
 * Publish all content items necessary for the Chatbot to populate the Azure Cognitive Search Index. You could publish the respective individual item or the parent item along with subitems for indexing.
 * Validate the chat experience within the Azure AI Studio
 * Deploy the chat experience as a new Web App or Power Virtual Agent bot from the Chat section
-* Embed the chat experience within your website. Below is a quick demo of the same, and detailed walk-through of the solution can be found here: [Building an Intelligent Chat Experience powered by Real time Business Content/Data with Azure OpenAI](https://youtu.be/IoavMH3akis?si=zRJjq-sP1z-yQabZ&t=1537),
+* Embed the chat experience within your website. Below is a quick demo of the same, and detailed walk-through of the solution can be found here: [Building an Intelligent Chat Experience powered by Real time Business Content/Data with Azure OpenAI](https://youtu.be/IoavMH3akis?si=zRJjq-sP1z-yQabZ),
 [![AI Chatbot for Sitecore](https://i3.ytimg.com/vi/1UY0iFHJFgU/maxresdefault.jpg)](https://www.youtube.com/watch?v=1UY0iFHJFgU)
 
 ## To deploy, extend, or customize this module for project-specific needs:
